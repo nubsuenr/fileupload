@@ -12,7 +12,7 @@ function App() {
       reader.onload = function (e) { //.. once finished..
         var rawLog = reader.result.split(',')[1]; //extract only thee file data part
         var dataSend = { dataReq: { data: rawLog, name: file.name, type: file.type }, fname: "uploadFilesToGoogleDrive" }; //preapre info to send to API
-        fetch('https://script.google.com/macros/s/AKfycbxLEB3KDT5wnaBakODZ81Gs6xD1O10IIdpaoePF2jUMlRqA20RtgmWK9-_zUHlIXQS_/exec', //your AppsScript URL
+        fetch('https://script.google.com/macros/s/AKfycbx2aKhiyyZZxE6C5JSVw0Up1SHLvGtqnllivolOhpBsUAGk67ofSIJLktjPBGbw9cK73g/exec', //your AppsScript URL
           { method: "POST", body: JSON.stringify(dataSend) }) //send to Api
            .then(res => res.json()).then((a) => {
             setData(a)
